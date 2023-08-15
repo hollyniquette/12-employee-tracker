@@ -1,17 +1,18 @@
 const db = require("../db/connection");
 
 class Employee {
-  constructor(employee_id, first_name, last_name, role_id, manager_id) {
-    (this.employee_id = employee_id),
-      (this.first_name = first_name),
+  constructor(first_name, last_name, role_id, manager_id, employee_id) {
+    (this.first_name = first_name),
       (this.last_name = last_name),
       (this.role_id = role_id),
-      (this.manager_id = manager_id);
+      (this.manager_id = manager_id),
+      (this.employee_id = employee_id);
   }
 
-  getAll() {
+  async getAll() {
     const sql = "SELECT * FROM employees";
-    return db.query(sql);
+    const [rows] = await db.promise().query(sql);
+    return rows;
   }
 
   addEmployee() {
@@ -23,18 +24,25 @@ class Employee {
       this.role_id,
       this.manager_id,
     ];
-    return db.query(sql, params);
-  }
-
-  getEmployeeById() {
-    const sql = `SELECT * FROM employees WHERE id = '${this.employee_id}'`;
-    return db.query(sql);
+    db.query(sql, params, (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      console.log("Employee added successfully!");
+    });
   }
 
   updateRole() {
-    const sql = `UPDATE employee SET role_id = ? WHERE id = '${this.employee_id}'`;
-    const params = [this.role_id];
-    return db.query(sql, params);
+    const sql = `UPDATE employee SET role_id = ${this.role_id} WHERE id = '${this.employee_id}'`;
+    db.query(sql, (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      console.log("Employee role updated successfully!");
+    });
   }
 }
+
 module.exports = Employee;
