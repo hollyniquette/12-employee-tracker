@@ -1,4 +1,4 @@
-# SQL: Employee Tracker CLI Application • ![License](https://img.shields.io/badge/License-MIT-blue.svg)
+# Employee Tracker CLI Application • SQL
 
 ## Table of Contents
 
