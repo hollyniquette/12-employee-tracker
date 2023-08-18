@@ -2,25 +2,25 @@
 USE employee_track;
 INSERT INTO departments (name)
 VALUES
-    ('Accounting'),
-    ('Marketing'),
-    ('Sales'),
-    ('Information Technology'),
-    ('Human Resources');
+    ('Development'),
+    ('Engineering'),
+    ('Strategic Operations'),
+    ('Operations'),
+    ('Aerodynamics');
 
 
 INSERT INTO roles (title, salary, department_id)
 VALUES
-  ('Sales Lead', '75000', 3),
-  ('Sales Associate', '50000', 3),
-  ('Lead Engineer', '160000', 4),
-  ('Software Engineer', '70000', 4),
-  ('Project Manager', '70000', 1),
-  ('Accountant', '80000', 1),
-  ('Payroll Specialist', '60000', 5),
-  ('Marketing Strategist', '120000', 2),
-  ('Graphic Designer', '60000', 2),
-  ('HR Manager', '90000', 5);
+  ('Machinist', '75000', 5),
+  ('Mechanic', '50000', 2),
+  ('Lead Engineer', '160000', 2),
+  ('Team Principle', '70000', 4),
+  ('Performance Analyst', '70000', 1),
+  ('Technical Director', '80000', 1),
+  ('Simulations Operator', '60000', 5),
+  ('Strategist', '120000', 3),
+  ('Sporting Director', '60000', 3),
+  ('Technician', '90000', 5);
     
 
 INSERT INTO employees (first_name, last_name, role_id, manager_id)
