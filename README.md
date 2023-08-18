@@ -23,6 +23,8 @@ This application provides a simple command-line interface for managing a company
 - Start the application by running `npm start`
 - Follow the prompts to manage the database.
 
+View a walkthrough [here.](https://drive.google.com/file/d/1ciG2lykHxgiDiK_uj-hH5hOaGO_3pYjr/view?usp=drive_link)
+
 ## Guidelines for Contribution
 
 All suggestions for improvement welcome! Feel free to fork the project and submit a pull request with your changes.
