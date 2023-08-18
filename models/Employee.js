@@ -34,7 +34,7 @@ class Employee {
   }
 
   updateRole() {
-    const sql = `UPDATE employee SET role_id = ${this.role_id} WHERE id = '${this.employee_id}'`;
+    const sql = `UPDATE employees SET role_id = ${this.role_id} WHERE employee_id = ${this.employee_id}`;
     db.query(sql, (err, result) => {
       if (err) {
         console.log(err);

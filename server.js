@@ -158,6 +158,7 @@ const mainPrompt = () => {
             name: `${employee.first_name} ${employee.last_name}`,
             value: employee.employee_id,
           }));
+          console.log(employees);
           inquirer
             .prompt([
               {
@@ -178,6 +179,7 @@ const mainPrompt = () => {
                 null,
                 null,
                 answers.role_id,
+                null,
                 answers.employee_id
               );
               employee.updateRole();
